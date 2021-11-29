@@ -1,6 +1,6 @@
 name: mobiprint3
 description: A flutter printer plugin for use with the Android 4.2.2 Mobiwire Mobiprint POS device which comes with a custom SDK.
-version: 1.0.2
+version: 1.0.3
 author: Ian Innocent <ianmin2@live.com>
 homepage: http://ian.bixbyte.io
 
