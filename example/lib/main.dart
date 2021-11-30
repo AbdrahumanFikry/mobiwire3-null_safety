@@ -34,12 +34,12 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      rsp = await Mobiprint3.print(
-          'This is a really simplistic implementation of the mobiprint3 plugin for flutter\n\nOn spotting issues please contribute.');
-      rsp2 = await Mobiprint3.custom("ianmin2", 2);
-      await Mobiprint3.end();
+      // rsp = await Mobiprint3.print(
+      //     'This is a really simplistic implementation of the mobiprint3 plugin for flutter\n\nOn spotting issues please contribute.');
+      // rsp2 = await Mobiprint3.custom("ianmin2", 2);
+      // await Mobiprint3.end();
       // print(rsp);
-      print(rsp2);
+      // print(rsp2);
       platformVersion = 'Flutter@ianmin2';
       // platformVersion = rsp['message'];
     } on PlatformException {
@@ -101,11 +101,26 @@ class _MyAppState extends State<MyApp> {
               ),
               SizedBox(height: 6),
               RaisedButton(
-                child: Text("Custom, 3"),
+                child: Text("Custom, 2"),
                 onPressed: () async {
                   final Map<String, dynamic>? rsp =
-                      await Mobiprint3.custom("@ianmin2\n\n\n", 3);
+                      await Mobiprint3.custom("بسم الله", 2);
                   print(rsp);
+                },
+              ),
+              SizedBox(height: 6),
+              RaisedButton(
+                child: Text("Image"),
+                onPressed: () async {
+                  // final Map<String, dynamic>? rsp =
+                  //     await Mobiprint3.image("assets/images/logo_print.png");
+                  // print(rsp);
+                  final Map<String, dynamic>? rsp1 =
+                      await Mobiprint3.image("/storage/sdcard0/we.png");
+                  print(rsp1);
+                  final Map<String, dynamic>? rsp2 = await Mobiprint3.image(
+                      "/storage/sdcard0/Download/test.png");
+                  print(rsp2);
                 },
               ),
               SizedBox(height: 6),
